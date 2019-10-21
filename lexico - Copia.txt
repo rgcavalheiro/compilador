@@ -1,0 +1,160 @@
+102 char
+150 id letra
+2
+150 id proxima
+1
+102 char
+150 id palavra
+9
+200 literal numerica 100
+1
+10
+1
+150 id FILE
+18
+150 id arq
+2
+18
+150 id arqLex
+1
+128 void
+150 id ler
+7
+8
+1
+128 void
+150 id lerNumero
+7
+8
+1
+128 void
+150 id lerPalavra
+7
+8
+1
+115 int
+150 id isLetra
+7
+102 char
+150 id l
+8
+1
+115 int
+150 id isNumero
+7
+102 char
+150 id l
+8
+1
+115 int
+150 id isReservada
+7
+8
+1
+115 int
+150 id main
+7
+115 int
+150 id argc
+2
+102 char
+18
+18
+150 id argv
+8
+5
+102 char
+150 id nomearq
+9
+200 literal numerica 20
+1
+10
+1
+150 id arqLex
+27
+150 id fopen
+7
+150 id lexico
+4
+150 id txt
+2
+150 id w
+8
+1
+114 if
+7
+25
+150 id arqLex
+8
+5
+150 id printf
+7
+150 id N
+150 id o
+150 id criou
+150 id o
+150 id arquivo
+150 id Lexico
+4
+150 id n
+8
+1
+118 return
+200 literal numerica 0
+1
+1
+6
+114 if
+7
+150 id argc
+32
+200 literal numerica 1
+1
+8
+5
+150 id arq
+27
+150 id fopen
+7
+150 id argv
+9
+200 literal numerica 1
+1
+10
+2
+150 id r
+8
+1
+6
+108 else
+5
+150 id printf
+7
+150 id Informe
+150 id o
+150 id nome
+106 do
+150 id arquivo
+3
+8
+1
+150 id scanf
+7
+22
+150 id s
+2
+37
+150 id nomearq
+8
+1
+150 id arq
+27
+150 id fopen
+7
+150 id nomearq
+2
+150 id r
+8
+1
+6
+6

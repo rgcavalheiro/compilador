@@ -1,0 +1,53 @@
+102 char
+150 id letra
+2
+150 id proxima
+1
+102 char
+150 id palavra
+9
+200 literal numerica 100
+1
+10
+1
+150 id FILE
+18
+150 id arq
+2
+18
+150 id arqLex
+1
+128 void
+150 id ler
+7
+8
+1
+128 void
+150 id lerNumero
+7
+8
+1
+128 void
+150 id lerPalavra
+7
+8
+1
+115 int
+150 id isLetra
+7
+102 char
+150 id l
+8
+1
+115 int
+150 id isNumero
+7
+102 char
+150 id l
+8
+1
+115 int
+150 id isReservada
+7
+8
+1
