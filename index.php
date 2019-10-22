@@ -4,6 +4,16 @@ require_once 'config.php';
 
 require_once 'database.php';
 
+
+
+$todos = find('simbolos');
+foreach ($todos as $key => $value) {
+	$id = $value['id'];
+	remove('simbolos',$id);
+}
+
+
+
 $arquivo = fopen('lexico.txt','r');
 $atual = 0;
 $saida;
@@ -13,6 +23,9 @@ $tipo_temp;
 
 $identificadores_temp = array();
 $identificadores = array();
+
+
+
 
 
 
@@ -27,8 +40,10 @@ while(!feof($arquivo) ){
 
 	
 	echo '[Linha '.$atual.']= '.$linha.'<br/>';
+	$simbolo = array('nome'=> '','escopo' => '','simples' => '','funcao' => '','parametros' => '','matriz' => '','dimensoes' => '');
 	checkLinha($linha);
 	$atual++;
+
 	
 }
 
@@ -44,13 +59,7 @@ fclose($arquivo);
 
 
 
-function addSimbolo($str){
-	global $tabela_simbolos;
 
-	array_push($tabela_simbolos,$str);
-
-
-}
 
 
 
@@ -66,17 +75,22 @@ function checkLinha($str){
 	}
 
 	switch ($cod) {
-		case '102':
-		if(isTipo($str)){
-			echo 'Tipo validado "'.$tipo_temp.'"<br><br>';	
-		}else{
-			echo 'Tipo invalido<br><br>';
-		}
-		break;
-
+		
 		case '150':
 		if(isIdentificador($str)){
-			echo 'Identificador validado '.$tipo_temp.'"'.$saida.'" <br><br>';
+			echo 'Identificador validado ['.$tipo_temp.']"'.$saida.'" <br><br>';
+			$simbolo['nome'] = $saida;
+			if($tipo_temp == 'void'){
+				$simbolo['simples'] = 0;
+				$simbolo['funcao'] = 1;
+			}else{
+				$simbolo['simples'] = 1;
+			}
+			$simbolo['tipo'] = $tipo_temp;
+			$simbolo['escopo'] = 1;
+			
+ 			save('simbolos',$simbolo);
+
 		}
 		break;
 
@@ -86,6 +100,15 @@ function checkLinha($str){
 
 		case '1':
 		echo 'Caractere ";" <br><br>';
+		$tipo_temp = '';
+		break;
+
+		case '102' or '115':
+		if(isTipo($str)){
+			echo 'Tipo validado "'.$tipo_temp.'"<br><br>';	
+		}else{
+			echo 'Tipo invalido<br><br>';
+		}
 		break;
 
 		
@@ -146,6 +169,16 @@ function encontra($str,$procurada){
 	}
 
 }
+
+
+function addSimbolo($simbolo){
+
+save('simbolos',$simbolo);
+
+
+}
+
+
 
 
 

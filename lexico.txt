@@ -1,3 +1,5 @@
+115 int
+150 id isLetra
 102 char
 150 id letra
 2
